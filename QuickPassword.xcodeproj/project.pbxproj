@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0869C35AAE6D23A8EAA58CA5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8496F2438BDF1C7DCF393C8F /* libPods.a */; };
+		32BD5416363D507760C4EBA0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8496F2438BDF1C7DCF393C8F /* libPods.a */; };
 		F4A83E3B1BF6DD84006E4B3E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A83E3A1BF6DD84006E4B3E /* main.m */; };
 		F4A83E3E1BF6DD84006E4B3E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A83E3D1BF6DD84006E4B3E /* AppDelegate.m */; };
 		F4A83E411BF6DD84006E4B3E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A83E401BF6DD84006E4B3E /* ViewController.m */; };
@@ -15,6 +17,14 @@
 		F4A83E491BF6DD84006E4B3E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A83E471BF6DD84006E4B3E /* LaunchScreen.storyboard */; };
 		F4A83E541BF6DD84006E4B3E /* QuickPasswordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A83E531BF6DD84006E4B3E /* QuickPasswordTests.m */; };
 		F4A83E5F1BF6DD84006E4B3E /* QuickPasswordUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A83E5E1BF6DD84006E4B3E /* QuickPasswordUITests.m */; };
+		F4A83E761BF6DDB4006E4B3E /* KeyboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A83E751BF6DDB4006E4B3E /* KeyboardViewController.m */; };
+		F4A83E7A1BF6DDB4006E4B3E /* Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F4A83E721BF6DDB4006E4B3E /* Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F4A83E811BF6E374006E4B3E /* QPCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A83E801BF6E374006E4B3E /* QPCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		F4A83E881BF750B4006E4B3E /* image.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A83E871BF750B4006E4B3E /* image.xcassets */; settings = {ASSET_TAGS = (); }; };
+		F4A83E951BF77B4E006E4B3E /* QPTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A83E941BF77B4E006E4B3E /* QPTopView.m */; settings = {ASSET_TAGS = (); }; };
+		F4A83E981BF88F61006E4B3E /* QPLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A83E971BF88F61006E4B3E /* QPLeftView.m */; settings = {ASSET_TAGS = (); }; };
+		F4A83E9B1BF88F71006E4B3E /* QPRightView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A83E9A1BF88F71006E4B3E /* QPRightView.m */; settings = {ASSET_TAGS = (); }; };
+		F4A83E9E1BF88F7D006E4B3E /* QPBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A83E9D1BF88F7D006E4B3E /* QPBottomView.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,9 +42,33 @@
 			remoteGlobalIDString = F4A83E351BF6DD84006E4B3E;
 			remoteInfo = QuickPassword;
 		};
+		F4A83E781BF6DDB4006E4B3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4A83E2E1BF6DD84006E4B3E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4A83E711BF6DDB4006E4B3E;
+			remoteInfo = Keyboard;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F4A83E7E1BF6DDB4006E4B3E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F4A83E7A1BF6DDB4006E4B3E /* Keyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		613E7EE2F7C4E19AAA908AB3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8496F2438BDF1C7DCF393C8F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAEACE4BC6AE40D4D22754D3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F4A83E361BF6DD84006E4B3E /* QuickPassword.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickPassword.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A83E3A1BF6DD84006E4B3E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F4A83E3C1BF6DD84006E4B3E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +85,21 @@
 		F4A83E5A1BF6DD84006E4B3E /* QuickPasswordUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickPasswordUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A83E5E1BF6DD84006E4B3E /* QuickPasswordUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickPasswordUITests.m; sourceTree = "<group>"; };
 		F4A83E601BF6DD84006E4B3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4A83E721BF6DDB4006E4B3E /* Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Keyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4A83E741BF6DDB4006E4B3E /* KeyboardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyboardViewController.h; sourceTree = "<group>"; };
+		F4A83E751BF6DDB4006E4B3E /* KeyboardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyboardViewController.m; sourceTree = "<group>"; };
+		F4A83E771BF6DDB4006E4B3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4A83E7F1BF6E374006E4B3E /* QPCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPCollectionViewCell.h; sourceTree = "<group>"; };
+		F4A83E801BF6E374006E4B3E /* QPCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPCollectionViewCell.m; sourceTree = "<group>"; };
+		F4A83E871BF750B4006E4B3E /* image.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = image.xcassets; sourceTree = "<group>"; };
+		F4A83E931BF77B4E006E4B3E /* QPTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPTopView.h; sourceTree = "<group>"; };
+		F4A83E941BF77B4E006E4B3E /* QPTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPTopView.m; sourceTree = "<group>"; };
+		F4A83E961BF88F61006E4B3E /* QPLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPLeftView.h; sourceTree = "<group>"; };
+		F4A83E971BF88F61006E4B3E /* QPLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPLeftView.m; sourceTree = "<group>"; };
+		F4A83E991BF88F71006E4B3E /* QPRightView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPRightView.h; sourceTree = "<group>"; };
+		F4A83E9A1BF88F71006E4B3E /* QPRightView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPRightView.m; sourceTree = "<group>"; };
+		F4A83E9C1BF88F7D006E4B3E /* QPBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPBottomView.h; sourceTree = "<group>"; };
+		F4A83E9D1BF88F7D006E4B3E /* QPBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPBottomView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0869C35AAE6D23A8EAA58CA5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,16 +125,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4A83E6F1BF6DDB4006E4B3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32BD5416363D507760C4EBA0 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21E1B33C9B79B6FD480277C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				613E7EE2F7C4E19AAA908AB3 /* Pods.debug.xcconfig */,
+				BAEACE4BC6AE40D4D22754D3 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC739040FFCF9758C3D8EA65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8496F2438BDF1C7DCF393C8F /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F4A83E2D1BF6DD84006E4B3E = {
 			isa = PBXGroup;
 			children = (
 				F4A83E381BF6DD84006E4B3E /* QuickPassword */,
 				F4A83E521BF6DD84006E4B3E /* QuickPasswordTests */,
 				F4A83E5D1BF6DD84006E4B3E /* QuickPasswordUITests */,
+				F4A83E731BF6DDB4006E4B3E /* Keyboard */,
 				F4A83E371BF6DD84006E4B3E /* Products */,
+				21E1B33C9B79B6FD480277C1 /* Pods */,
+				EC739040FFCF9758C3D8EA65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +172,7 @@
 				F4A83E361BF6DD84006E4B3E /* QuickPassword.app */,
 				F4A83E4F1BF6DD84006E4B3E /* QuickPasswordTests.xctest */,
 				F4A83E5A1BF6DD84006E4B3E /* QuickPasswordUITests.xctest */,
+				F4A83E721BF6DDB4006E4B3E /* Keyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +219,35 @@
 			path = QuickPasswordUITests;
 			sourceTree = "<group>";
 		};
+		F4A83E731BF6DDB4006E4B3E /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				F4A83E891BF77147006E4B3E /* Views */,
+				F4A83E871BF750B4006E4B3E /* image.xcassets */,
+				F4A83E741BF6DDB4006E4B3E /* KeyboardViewController.h */,
+				F4A83E751BF6DDB4006E4B3E /* KeyboardViewController.m */,
+				F4A83E7F1BF6E374006E4B3E /* QPCollectionViewCell.h */,
+				F4A83E801BF6E374006E4B3E /* QPCollectionViewCell.m */,
+				F4A83E771BF6DDB4006E4B3E /* Info.plist */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		F4A83E891BF77147006E4B3E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F4A83E931BF77B4E006E4B3E /* QPTopView.h */,
+				F4A83E941BF77B4E006E4B3E /* QPTopView.m */,
+				F4A83E961BF88F61006E4B3E /* QPLeftView.h */,
+				F4A83E971BF88F61006E4B3E /* QPLeftView.m */,
+				F4A83E991BF88F71006E4B3E /* QPRightView.h */,
+				F4A83E9A1BF88F71006E4B3E /* QPRightView.m */,
+				F4A83E9C1BF88F7D006E4B3E /* QPBottomView.h */,
+				F4A83E9D1BF88F7D006E4B3E /* QPBottomView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,13 +255,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4A83E631BF6DD84006E4B3E /* Build configuration list for PBXNativeTarget "QuickPassword" */;
 			buildPhases = (
+				37EE38A43311B89877188FE3 /* Check Pods Manifest.lock */,
 				F4A83E321BF6DD84006E4B3E /* Sources */,
 				F4A83E331BF6DD84006E4B3E /* Frameworks */,
 				F4A83E341BF6DD84006E4B3E /* Resources */,
+				F4A83E7E1BF6DDB4006E4B3E /* Embed App Extensions */,
+				0C7F3B4BACCB0411DD493026 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F4A83E791BF6DDB4006E4B3E /* PBXTargetDependency */,
 			);
 			name = QuickPassword;
 			productName = QuickPassword;
@@ -196,6 +308,25 @@
 			productReference = F4A83E5A1BF6DD84006E4B3E /* QuickPasswordUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		F4A83E711BF6DDB4006E4B3E /* Keyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4A83E7B1BF6DDB4006E4B3E /* Build configuration list for PBXNativeTarget "Keyboard" */;
+			buildPhases = (
+				20502C0C30D38D1D7417DA7E /* Check Pods Manifest.lock */,
+				F4A83E6E1BF6DDB4006E4B3E /* Sources */,
+				F4A83E6F1BF6DDB4006E4B3E /* Frameworks */,
+				F4A83E701BF6DDB4006E4B3E /* Resources */,
+				1F44F6B46C48E962018F21D8 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Keyboard;
+			productName = Keyboard;
+			productReference = F4A83E721BF6DDB4006E4B3E /* Keyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -216,6 +347,9 @@
 						CreatedOnToolsVersion = 7.0.1;
 						TestTargetID = F4A83E351BF6DD84006E4B3E;
 					};
+					F4A83E711BF6DDB4006E4B3E = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
 				};
 			};
 			buildConfigurationList = F4A83E311BF6DD84006E4B3E /* Build configuration list for PBXProject "QuickPassword" */;
@@ -234,6 +368,7 @@
 				F4A83E351BF6DD84006E4B3E /* QuickPassword */,
 				F4A83E4E1BF6DD84006E4B3E /* QuickPasswordTests */,
 				F4A83E591BF6DD84006E4B3E /* QuickPasswordUITests */,
+				F4A83E711BF6DDB4006E4B3E /* Keyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -263,7 +398,78 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4A83E701BF6DDB4006E4B3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A83E881BF750B4006E4B3E /* image.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C7F3B4BACCB0411DD493026 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1F44F6B46C48E962018F21D8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20502C0C30D38D1D7417DA7E /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		37EE38A43311B89877188FE3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F4A83E321BF6DD84006E4B3E /* Sources */ = {
@@ -292,6 +498,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F4A83E6E1BF6DDB4006E4B3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A83E761BF6DDB4006E4B3E /* KeyboardViewController.m in Sources */,
+				F4A83E951BF77B4E006E4B3E /* QPTopView.m in Sources */,
+				F4A83E981BF88F61006E4B3E /* QPLeftView.m in Sources */,
+				F4A83E9B1BF88F71006E4B3E /* QPRightView.m in Sources */,
+				F4A83E9E1BF88F7D006E4B3E /* QPBottomView.m in Sources */,
+				F4A83E811BF6E374006E4B3E /* QPCollectionViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -304,6 +523,11 @@
 			isa = PBXTargetDependency;
 			target = F4A83E351BF6DD84006E4B3E /* QuickPassword */;
 			targetProxy = F4A83E5B1BF6DD84006E4B3E /* PBXContainerItemProxy */;
+		};
+		F4A83E791BF6DDB4006E4B3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4A83E711BF6DDB4006E4B3E /* Keyboard */;
+			targetProxy = F4A83E781BF6DDB4006E4B3E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -363,7 +587,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -400,7 +624,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -409,6 +633,7 @@
 		};
 		F4A83E641BF6DD84006E4B3E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 613E7EE2F7C4E19AAA908AB3 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = QuickPassword/Info.plist;
@@ -420,6 +645,7 @@
 		};
 		F4A83E651BF6DD84006E4B3E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAEACE4BC6AE40D4D22754D3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = QuickPassword/Info.plist;
@@ -477,6 +703,30 @@
 			};
 			name = Release;
 		};
+		F4A83E7C1BF6DDB4006E4B3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 613E7EE2F7C4E19AAA908AB3 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = Keyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.code4ape.QuickPassword.Keyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F4A83E7D1BF6DDB4006E4B3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BAEACE4BC6AE40D4D22754D3 /* Pods.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = Keyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.code4ape.QuickPassword.Keyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -496,6 +746,7 @@
 				F4A83E651BF6DD84006E4B3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4A83E661BF6DD84006E4B3E /* Build configuration list for PBXNativeTarget "QuickPasswordTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +755,7 @@
 				F4A83E681BF6DD84006E4B3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4A83E691BF6DD84006E4B3E /* Build configuration list for PBXNativeTarget "QuickPasswordUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +764,16 @@
 				F4A83E6B1BF6DD84006E4B3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4A83E7B1BF6DDB4006E4B3E /* Build configuration list for PBXNativeTarget "Keyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4A83E7C1BF6DDB4006E4B3E /* Debug */,
+				F4A83E7D1BF6DDB4006E4B3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
