@@ -1,0 +1,13 @@
+PODS:
+  - Masonry (0.6.3)
+  - MJExtension (2.5.16)
+
+DEPENDENCIES:
+  - Masonry (~> 0.6.3)
+  - MJExtension (~> 2.5.12)
+
+SPEC CHECKSUMS:
+  Masonry: ff105a956abcd19a618b2028b121cb638d7a8e2f
+  MJExtension: b8c1321a77d91bcc007b94d38cbf5383c95ea30e
+
+COCOAPODS: 0.38.2
