@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CFAToolKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 		<key>Keyboard.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -33,6 +38,16 @@
 			<true/>
 		</dict>
 		<key>F4A83E711BF6DDB4006E4B3E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4E48AB71BFA20F20008569E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F4E48AC01BFA20F20008569E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

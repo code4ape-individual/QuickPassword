@@ -43,13 +43,23 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F4E48AC01BFA20F20008569E"
+               BuildableName = "CFAToolKitTests.xctest"
+               BlueprintName = "CFAToolKitTests"
+               ReferencedContainer = "container:QuickPassword.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F4A83E711BF6DDB4006E4B3E"
-            BuildableName = "Keyboard.appex"
-            BlueprintName = "Keyboard"
+            BlueprintIdentifier = "F4A83E351BF6DD84006E4B3E"
+            BuildableName = "QuickPassword.app"
+            BlueprintName = "QuickPassword"
             ReferencedContainer = "container:QuickPassword.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -67,8 +77,12 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "1"
+         BundleIdentifier = "com.apple.mobilesafari"
+         RemotePath = "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/Applications/MobileSafari.app">
+      </RemoteRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F4A83E351BF6DD84006E4B3E"
@@ -76,7 +90,7 @@
             BlueprintName = "QuickPassword"
             ReferencedContainer = "container:QuickPassword.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

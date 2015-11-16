@@ -14,6 +14,9 @@
 {
     UIButton *_accountBtn;
     UIButton *_passwordBtn;
+    
+    UIView *_middleLine;
+    UIView *_rightLine;
 }
 @end
 
@@ -45,9 +48,16 @@
     [_passwordBtn setTitle:@"密码" forState:UIControlStateNormal];
     [_passwordBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     
+    _middleLine = [UIView new];
+    _middleLine.backgroundColor = [UIColor lightGrayColor];
+    
+    _rightLine = [UIView new];
+    _rightLine.backgroundColor = [UIColor lightGrayColor];
     
     [self addSubview:_accountBtn];
     [self addSubview:_passwordBtn];
+    [self addSubview:_middleLine];
+    [self addSubview:_rightLine];
     
     [_accountBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
@@ -61,6 +71,18 @@
         make.bottom.equalTo(self);
         make.top.equalTo(_accountBtn.mas_bottom);
         make.height.equalTo(_accountBtn);
+    }];
+    
+    [_middleLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(4);
+        make.right.equalTo(self).offset(-4);
+        make.top.equalTo(_passwordBtn);
+        make.height.mas_equalTo(1/[UIScreen mainScreen].scale);
+    }];
+    
+    [_rightLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.right.equalTo(self);
+        make.width.mas_equalTo(1/[UIScreen mainScreen].scale);
     }];
 }
 

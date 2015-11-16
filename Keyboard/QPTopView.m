@@ -15,6 +15,7 @@
     UIButton *_leftBtn;
     UIButton *_rightBtn;
     UILabel *_middleLabel;
+    UIView *_bottomLine;
     
 }
 @end
@@ -36,6 +37,7 @@
     _leftBtn = [UIButton new];
     _rightBtn = [UIButton new];
     _middleLabel = [UILabel new];
+    _bottomLine = [UIView new];
     
     _leftBtn.tag = QPTopViewBtnTypeLeft;
     _rightBtn.tag = QPTopViewBtnTypeRight;
@@ -43,9 +45,12 @@
     [_leftBtn setImage:[UIImage imageNamed:@"btn_setting"] forState:UIControlStateNormal];
     [_rightBtn setImage:[UIImage imageNamed:@"btn_hideKeyboard"] forState:UIControlStateNormal];
     
+    _bottomLine.backgroundColor = [UIColor lightGrayColor];
+    
     [self addSubview:_leftBtn];
     [self addSubview:_rightBtn];
     [self addSubview:_middleLabel];
+    [self addSubview:_bottomLine];
     
     [_leftBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.bottom.equalTo(self);
@@ -61,6 +66,13 @@
         make.center.equalTo(self);
         make.left.greaterThanOrEqualTo(_leftBtn.mas_right);
         make.right.lessThanOrEqualTo(_rightBtn.mas_left);
+    }];
+    
+    [_bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(0);
+        make.right.equalTo(self).offset(0);
+        make.bottom.equalTo(self);
+        make.height.mas_equalTo(1/[UIScreen mainScreen].scale);
     }];
 }
 

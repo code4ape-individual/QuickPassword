@@ -15,6 +15,10 @@
     UIButton *_backBtn;
     UIButton *_clearBtn;
     UIButton *_doneBtn;
+    
+    UIView *_leftLine;
+    UIView *_topLine;
+    UIView *_middleLine;
 }
 @end
 
@@ -51,9 +55,21 @@
     [_doneBtn setTitle:@"发送" forState:UIControlStateNormal];
     [_doneBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
     
+    _leftLine = [UIView new];
+    _leftLine.backgroundColor = [UIColor lightGrayColor];
+    
+    _topLine = [UIView new];
+    _topLine.backgroundColor = [UIColor lightGrayColor];
+    
+    _middleLine = [UIView new];
+    _middleLine.backgroundColor = [UIColor lightGrayColor];
+    
     [self addSubview:_backBtn];
     [self addSubview:_clearBtn];
     [self addSubview:_doneBtn];
+    [self addSubview:_leftLine];
+    [self addSubview:_topLine];
+    [self addSubview:_middleLine];
     
     [_backBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
@@ -74,6 +90,26 @@
         make.top.equalTo(_clearBtn.mas_bottom);
         make.bottom.equalTo(self);
         make.height.equalTo(self).multipliedBy(0.5);
+    }];
+    
+    [_leftLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(0);
+        make.top.bottom.equalTo(self);
+        make.width.mas_equalTo(1/[UIScreen mainScreen].scale);
+    }];
+    
+    [_topLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(12);
+        make.right.equalTo(self).offset(-12);
+        make.centerY.equalTo(self).multipliedBy(0.5);
+        make.height.mas_equalTo(1/[UIScreen mainScreen].scale);
+    }];
+    
+    [_middleLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(12);
+        make.right.equalTo(self).offset(-12);
+        make.centerY.equalTo(self);
+        make.height.mas_equalTo(1/[UIScreen mainScreen].scale);
     }];
 }
 

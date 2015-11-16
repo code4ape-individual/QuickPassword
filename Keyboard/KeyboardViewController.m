@@ -11,14 +11,19 @@
 #import <Masonry.h>
 
 #import "QPTopView.h"
+#import "QPLeftView.h"
+#import "QPRightView.h"
+#import "QPBottomView.h"
 
-@interface KeyboardViewController () <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
+@interface KeyboardViewController () <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,QPTopViewDelegate,QPLeftViewDelegate,QPRightViewDelegate,QPBottomViewDelegate>
 @property (nonatomic, strong) UIButton *nextKeyboardButton;
 
 @property (nonatomic, strong) NSArray *accountArray;
 
-
 @property(nonatomic,strong) QPTopView *topView;
+@property(nonatomic,strong) QPLeftView *leftView;
+@property(nonatomic,strong) QPRightView *rightView;
+@property(nonatomic,strong) QPBottomView *bottomView;
 
 @end
 
@@ -37,20 +42,20 @@
                           @{@"name":@"苹果账号",@"content":@"slkai@qq.com"}
                           ];
     
-    // Perform custom UI setup here
-    self.nextKeyboardButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    
-    [self.nextKeyboardButton setTitle:NSLocalizedString(@"Next Keyboard", @"Title for 'Next Keyboard' button") forState:UIControlStateNormal];
-    [self.nextKeyboardButton sizeToFit];
-    self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    [self.nextKeyboardButton addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:self.nextKeyboardButton];
-    
-    NSLayoutConstraint *nextKeyboardButtonLeftSideConstraint = [NSLayoutConstraint constraintWithItem:self.nextKeyboardButton attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0];
-    NSLayoutConstraint *nextKeyboardButtonBottomConstraint = [NSLayoutConstraint constraintWithItem:self.nextKeyboardButton attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
-    [self.view addConstraints:@[nextKeyboardButtonLeftSideConstraint, nextKeyboardButtonBottomConstraint]];
+//    // Perform custom UI setup here
+//    self.nextKeyboardButton = [UIButton buttonWithType:UIButtonTypeSystem];
+//    
+//    [self.nextKeyboardButton setTitle:NSLocalizedString(@"Next Keyboard", @"Title for 'Next Keyboard' button") forState:UIControlStateNormal];
+//    [self.nextKeyboardButton sizeToFit];
+//    self.nextKeyboardButton.translatesAutoresizingMaskIntoConstraints = NO;
+//    
+//    [self.nextKeyboardButton addTarget:self action:@selector(advanceToNextInputMode) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [self.view addSubview:self.nextKeyboardButton];
+//    
+//    NSLayoutConstraint *nextKeyboardButtonLeftSideConstraint = [NSLayoutConstraint constraintWithItem:self.nextKeyboardButton attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeLeft multiplier:1.0 constant:0.0];
+//    NSLayoutConstraint *nextKeyboardButtonBottomConstraint = [NSLayoutConstraint constraintWithItem:self.nextKeyboardButton attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0];
+//    [self.view addConstraints:@[nextKeyboardButtonLeftSideConstraint, nextKeyboardButtonBottomConstraint]];
     
     [self drawSubviews];
 }
@@ -61,6 +66,17 @@
 {
     // topView
     _topView = [QPTopView new];
+    _topView.delegate = self;
+    
+    _leftView = [QPLeftView new];
+    _leftView.delegate = self;
+    
+    _rightView = [QPRightView new];
+    _rightView.delegate = self;
+    
+    _bottomView = [QPBottomView new];
+    _bottomView.delegate = self;
+
     
     // collectionView
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
@@ -75,6 +91,9 @@
     
     
     [self.inputView addSubview:_topView];
+    [self.inputView addSubview:_leftView];
+    [self.inputView addSubview:_rightView];
+    [self.inputView addSubview:_bottomView];
     [self.inputView addSubview:collection];
     
     
@@ -85,8 +104,31 @@
         make.height.mas_equalTo(40);
     }];
     
+    [_leftView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.inputView);
+        make.top.equalTo(_topView.mas_bottom);
+        make.bottom.equalTo(_bottomView.mas_top);
+        make.width.mas_equalTo(40);
+    }];
+    
+    [_rightView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.inputView);
+        make.top.equalTo(_topView.mas_bottom);
+        make.bottom.equalTo(self.inputView);
+        make.width.mas_equalTo(40);
+    }];
+    
+    [_bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.equalTo(self.inputView);
+        make.height.mas_equalTo(40);
+        make.right.equalTo(_rightView.mas_left);
+    }];
+    
     [collection mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.inputView);
+        make.left.equalTo(_leftView.mas_right);
+        make.right.equalTo(_rightView.mas_left);
+        make.top.equalTo(_topView.mas_bottom);
+        make.bottom.equalTo(_bottomView.mas_top);
     }];
     
     
@@ -100,6 +142,22 @@
 }
 
 #pragma mark - Delegate
+-(void)topViewBtnDidClick:(QPTopViewBtnType)type
+{
+
+}
+
+-(void)leftViewBtnDidClick:(QPLeftViewBtnType)type
+{
+
+}
+
+-(void)rightViewBtnDidClick:(QPRightViewBtnType)type
+{
+
+}
+
+#pragma mark - TableViewDelegate
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;
