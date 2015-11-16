@@ -60,6 +60,16 @@
     [self drawSubviews];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
 
 #pragma mark - Draw
 -(void)drawSubviews
@@ -130,8 +140,6 @@
         make.top.equalTo(_topView.mas_bottom);
         make.bottom.equalTo(_bottomView.mas_top);
     }];
-    
-    
 }
 
 
@@ -144,7 +152,15 @@
 #pragma mark - Delegate
 -(void)topViewBtnDidClick:(QPTopViewBtnType)type
 {
-
+    switch (type) {
+        case QPTopViewBtnTypeLeft:{
+            
+        } break;
+        case QPTopViewBtnTypeRight:{
+            [self dismissKeyboard];
+        } break;
+        default:break;
+    }
 }
 
 -(void)leftViewBtnDidClick:(QPLeftViewBtnType)type

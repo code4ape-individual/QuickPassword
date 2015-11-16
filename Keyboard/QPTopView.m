@@ -45,6 +45,9 @@
     [_leftBtn setImage:[UIImage imageNamed:@"btn_setting"] forState:UIControlStateNormal];
     [_rightBtn setImage:[UIImage imageNamed:@"btn_hideKeyboard"] forState:UIControlStateNormal];
     
+    [_leftBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [_rightBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
     _bottomLine.backgroundColor = [UIColor lightGrayColor];
     
     [self addSubview:_leftBtn];
