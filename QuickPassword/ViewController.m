@@ -10,6 +10,8 @@
 
 #import <Masonry.h>
 
+#import "UIView+Quick.h"
+
 @interface ViewController ()
 
 @end
@@ -19,8 +21,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIView *line = [UIView createLine];
+    line.frame = CGRectMake(0, 0, self.view.frame.size.width, 20);
+    [self.view addSubview:line];
     
-    
+    UITextField *textFiled = [[UITextField alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 50)];
+    textFiled.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:textFiled];
 
 }
 

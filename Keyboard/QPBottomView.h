@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    QPBottomViewBtnTypeNextKeyboard
+}QPBottomViewBtnType;
 
 @protocol QPBottomViewDelegate <NSObject>
 
-
+-(void)bottomViewBtnDidClick:(QPBottomViewBtnType)type;
 
 @end
 

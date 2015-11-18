@@ -27,6 +27,8 @@
     if (self = [super initWithFrame:frame])
     {
         [self drawSubviews];
+        
+        [self setCurrentSelected:0];
     }
     return self;
 }
@@ -93,6 +95,23 @@
     {
         [self.delegate leftViewBtnDidClick:(QPLeftViewBtnType)btn.tag];
     }
+}
+
+-(void)setCurrentSelected:(QPLeftViewBtnType)currentSelected
+{
+    // 选择账号
+    if (currentSelected == QPLeftViewBtnTypeAccount)
+    {
+        
+    }
+    // 选择密码
+    else if (currentSelected == QPLeftViewBtnTypePassword)
+    {
+    
+    }
+    
+    _currentSelected = currentSelected;
+    
 }
 
 @end

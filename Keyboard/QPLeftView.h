@@ -22,5 +22,6 @@ typedef enum {
 @interface QPLeftView : UIView
 
 @property (nonatomic,weak) id<QPLeftViewDelegate> delegate;
+@property (nonatomic,assign) QPLeftViewBtnType currentSelected; // 当前选择
 
 @end

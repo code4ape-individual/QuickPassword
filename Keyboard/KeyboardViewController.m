@@ -15,10 +15,13 @@
 #import "QPRightView.h"
 #import "QPBottomView.h"
 
+#import "UIView+Quick.h"
+
 @interface KeyboardViewController () <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,QPTopViewDelegate,QPLeftViewDelegate,QPRightViewDelegate,QPBottomViewDelegate>
 @property (nonatomic, strong) UIButton *nextKeyboardButton;
 
 @property (nonatomic, strong) NSArray *accountArray;
+@property (nonatomic, strong) NSArray *passwordArray;
 
 @property(nonatomic,strong) QPTopView *topView;
 @property(nonatomic,strong) QPLeftView *leftView;
@@ -32,15 +35,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.inputView.backgroundColor = [UIColor grayColor];
+    self.inputView.backgroundColor = [UIColor clearColor];
     
     // 加载数据
     self.accountArray = @[
-                          @{@"name":@"个人QQ邮箱",@"content":@"104496268@qq.com"},
-                          @{@"name":@"个人QQ邮箱别名",@"content":@"slkai@qq.com"},
-                          @{@"name":@"CFA邮箱",@"content":@"junjie_deng@qq.com"},
-                          @{@"name":@"苹果账号",@"content":@"slkai@qq.com"}
+                          @{@"name":@"测试1",@"content":@"abcd"},
+                          @{@"name":@"测试2",@"content":@"bcde"},
+                          @{@"name":@"测试3",@"content":@"adsgafsghad"},
+                          @{@"name":@"测试4",@"content":@"adshadfhhsdf"},
+                          @{@"name":@"测试5测试5",@"content":@"adshadfhhsdf"},
+                          @{@"name":@"测试6",@"content":@"adshadfhhsdf"},
+                          @{@"name":@"测试7",@"content":@"adshadfhhsdf"},
+                          @{@"name":@"测试8",@"content":@"adshadfhhsdf"},
+                          @{@"name":@"测试9测试9",@"content":@"adshadfhhsdf"},
+                          @{@"name":@"测试10",@"content":@"adshadfhhsdf"}
                           ];
+    
+    self.passwordArray = @[
+                           @{@"name":@"密码1",@"content":@"123456"},
+                           @{@"name":@"密码2",@"content":@"234567"},
+                           @{@"name":@"密码3",@"content":@"345678"},
+                           @{@"name":@"密码4",@"content":@"456789"},
+                           @{@"name":@"密码5",@"content":@"567890"},
+                           @{@"name":@"密码6",@"content":@"012345"},
+                           @{@"name":@"密码7",@"content":@"123456"},
+                           ];
     
 //    // Perform custom UI setup here
 //    self.nextKeyboardButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -91,45 +110,44 @@
     // collectionView
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    flowLayout.minimumLineSpacing = 5;
     
     UICollectionView *collection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     collection.backgroundColor = [UIColor clearColor];
     [collection registerClass:[QPCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     collection.delegate = self;
     collection.dataSource = self;
-    
-    
-    
-    [self.inputView addSubview:_topView];
-    [self.inputView addSubview:_leftView];
-    [self.inputView addSubview:_rightView];
-    [self.inputView addSubview:_bottomView];
-    [self.inputView addSubview:collection];
+
+    [self.view addSubview:_topView];
+    [self.view addSubview:_leftView];
+    [self.view addSubview:_rightView];
+    [self.view addSubview:_bottomView];
+    [self.view addSubview:collection];
     
     
     
     // constraint
     [_topView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.top.equalTo(self.inputView);
+        make.left.right.top.equalTo(self.view);
         make.height.mas_equalTo(40);
     }];
     
     [_leftView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.inputView);
+        make.left.equalTo(self.view);
         make.top.equalTo(_topView.mas_bottom);
         make.bottom.equalTo(_bottomView.mas_top);
         make.width.mas_equalTo(40);
     }];
     
     [_rightView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.inputView);
+        make.right.equalTo(self.view);
         make.top.equalTo(_topView.mas_bottom);
-        make.bottom.equalTo(self.inputView);
+        make.bottom.equalTo(self.view);
         make.width.mas_equalTo(40);
     }];
     
     [_bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.bottom.equalTo(self.inputView);
+        make.left.bottom.equalTo(self.view);
         make.height.mas_equalTo(40);
         make.right.equalTo(_rightView.mas_left);
     }];
@@ -171,6 +189,16 @@
 -(void)rightViewBtnDidClick:(QPRightViewBtnType)type
 {
 
+}
+
+-(void)bottomViewBtnDidClick:(QPBottomViewBtnType)type
+{
+    switch (type) {
+        case QPBottomViewBtnTypeNextKeyboard:{
+            [self advanceToNextInputMode];
+        } break;
+        default:break;
+    }
 }
 
 #pragma mark - TableViewDelegate

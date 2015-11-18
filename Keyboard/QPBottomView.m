@@ -13,6 +13,8 @@
 @interface QPBottomView ()
 {
     UIView *_topLine;
+    
+    UIButton *_nextKeyboardBtn;
 }
 @end
 
@@ -30,10 +32,22 @@
 #pragma mark - Draw
 -(void)drawSubviews
 {
+    
+    _nextKeyboardBtn = [UIButton new];
+    _nextKeyboardBtn.tag = QPBottomViewBtnTypeNextKeyboard;
+    [_nextKeyboardBtn setImage:[UIImage imageNamed:@"btn_setting"] forState:UIControlStateNormal];
+    [_nextKeyboardBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
     _topLine = [UIView new];
     _topLine.backgroundColor = [UIColor lightGrayColor];
     
+    [self addSubview:_nextKeyboardBtn];
     [self addSubview:_topLine];
+    
+    [_nextKeyboardBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.top.bottom.equalTo(self);
+        make.width.mas_equalTo(40);
+    }];
     
     [_topLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self);
@@ -44,7 +58,10 @@
 #pragma mark - Action
 -(void)btnClick:(UIControl *)btn
 {
-
+    if ([self.delegate respondsToSelector:@selector(bottomViewBtnDidClick:)])
+    {
+        [self.delegate bottomViewBtnDidClick:(QPBottomViewBtnType)btn.tag];
+    }
 }
 
 @end
