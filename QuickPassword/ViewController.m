@@ -29,6 +29,56 @@
     textFiled.borderStyle = UITextBorderStyleRoundedRect;
     [self.view addSubview:textFiled];
 
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler:) name:
+     UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler:) name:
+     UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler:) name:
+     UIKeyboardWillHideNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler:) name:
+     UIKeyboardDidHideNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler:) name:
+     UIKeyboardWillHideNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler:) name:
+     UIKeyboardFrameEndUserInfoKey object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler:) name:
+     UIKeyboardAnimationDurationUserInfoKey object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler:) name:
+     UIKeyboardAnimationCurveUserInfoKey object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler:) name:
+     UIKeyboardWillChangeFrameNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(notificationHandler:) name:
+     UIKeyboardDidChangeFrameNotification object:nil];
+}
+
+- (void)notificationHandler:(NSNotification *)notification
+{
+    NSLog(@"%@,%@",notification.name,notification.userInfo);
+    
+    
+//    NSLog(@"%@",notification.name);
+//    
+//    NSString *keys = @"";
+//    NSString *values = @"";
+//    for (NSString *key in notification.userInfo.allKeys)
+//    {
+//        keys = [keys stringByAppendingFormat:@"\n%@",key];
+//        values = [values stringByAppendingFormat:@"\n%@",notification.userInfo[key]];
+//    }
+//    
+//    NSLog(@"%@",keys);
+//    NSLog(@"%@",values);
+    
 }
 
 @end

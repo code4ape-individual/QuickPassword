@@ -123,9 +123,7 @@
     [self.view addSubview:_rightView];
     [self.view addSubview:_bottomView];
     [self.view addSubview:collection];
-    
-    
-    
+
     // constraint
     [_topView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.equalTo(self.view);
@@ -163,8 +161,11 @@
 
 - (void)updateViewConstraints {
     [super updateViewConstraints];
-    
-    NSLog(@"%@",NSStringFromCGRect(self.inputView.frame));
+
+//    NSLog(@"%@",NSStringFromCGRect(self.inputView.frame));
+//    
+//    UIReturnKeyType type = [self.textDocumentProxy returnKeyType];
+//    NSLog(@"%ld",(long)type);
 }
 
 #pragma mark - Delegate
@@ -188,7 +189,20 @@
 
 -(void)rightViewBtnDidClick:(QPRightViewBtnType)type
 {
-
+    switch (type) {
+        case QPRightViewBtnTypeBack:{
+            [self.textDocumentProxy deleteBackward];
+        } break;
+            
+        case QPRightViewBtnTypeClear:{
+        
+        } break;
+            
+        case QPRightViewBtnTypeDone:{
+            
+        } break;
+        default:break;
+    }
 }
 
 -(void)bottomViewBtnDidClick:(QPBottomViewBtnType)type
